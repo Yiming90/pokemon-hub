@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="宝可梦集换式卡牌游戏：收藏、对战、扩充包与规则入门。">
+<title>卡牌 · Pokémon Hub</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="cards">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div id="siteHeader"></div>
+<main id="main">
+  <section class="page-hero" style="background:linear-gradient(115deg,#fff7df,#ffeaa3 65%,#ffd94f);padding-bottom:50px">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">首页</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><span>卡牌</span></div>
+      <div class="page-eyebrow" style="color:#8a6400">POKÉMON TRADING CARD GAME</div>
+      <h1 class="page-title">一张卡牌，<br><span style="color:#b23a3f">一个可以带走的世界。</span></h1>
+      <p class="page-desc" style="color:#6b5a2b">收藏插画、构建卡组、在赛场相遇。宝可梦集换式卡牌游戏，用 60 张牌讲述属于你的策略故事。</p>
+      <div class="page-hero-stats"><div class="page-stat"><strong>4</strong><span>标准扩充包</span></div><div class="page-stat"><strong>12,480</strong><span>年度赛事场次</span></div><div class="page-stat"><strong>186万</strong><span>活跃牌手</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff7df">
+    <div class="container">
+      <div class="tcg-layout">
+        <div class="tcg-copy">
+          <div class="section-kicker" style="color:#a27700">COLLECT · BATTLE · CONNECT</div>
+          <h2 class="section-title">不只是卡牌，<br>是共同的语言。</h2>
+          <p>从 1996 年的第一套卡牌开始，宝可梦 TCG 已经走过近三十年。有人为了插画收藏，有人为了赛场上的每一次读牌，也有人只是为了和朋友交换一张喜欢的卡。</p>
+          <div class="card-feature-list" style="margin-top:24px">
+            <div class="card-feature-item"><span class="cf-icon" style="background:#fff1b8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/></svg></span><div><b>收藏的乐趣</b><p>经典插画、异色闪卡与沉浸式卡面，让每一页收藏册都有故事。</p></div></div>
+            <div class="card-feature-item"><span class="cf-icon" style="background:#ffe4e5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 4 6-2-2 6L7 19l-3 1 1-3L14 4Z"/></svg></span><div><b>对战的深度</b><p>能量、进化、支援者与奖赏卡，每一回合都在做取舍。</p></div></div>
+            <div class="card-feature-item"><span class="cf-icon" style="background:#e6f7f1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-5.5 6.5-5.5s6.5 2 6.5 5.5"/></svg></span><div><b>社群的温度</b><p>道馆、城市联赛与世界锦标赛，让陌生人因为一张卡成为朋友。</p></div></div>
+          </div>
+        </div>
+        <div class="tcg-visual">
+          <div class="tcg-burst"></div>
+          <div class="card-fan" id="cardFan"></div>
+          <div class="tcg-badge"><b>60 张</b><span>一套卡组的完整世界</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">CURRENT EXPANSIONS</div><h2 class="section-title" style="font-size:34px">当前扩充包</h2><p class="section-sub">标准赛制环境中的四个主题扩充包。点击查看对应商品。</p></div><a class="link-arrow blue" href="#cardShop">卡牌商品 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="product-grid" id="cardSets"></div>
+    </div>
+  </section>
+
+  <section class="section" id="cardShop" style="background:var(--bg)">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-kicker">CARD SHOP · 20 STYLES</div><h2 class="section-title" style="font-size:34px">卡牌商品与款式</h2><p class="section-sub">从整盒补充包、预组卡组到卡套、卡册与收藏卡砖。每件商品都可选择不同款式并加入购物袋。</p></div>
+        <span class="goods-count" id="cardProductCount">共 <b>20</b> 款卡牌商品</span>
+      </div>
+      <div class="product-grid" id="cardProducts"></div>
+      <div class="cart-note" style="margin-top:24px">所有卡牌商品均支持 7 天无理由退货。演示站点不提供真实交易与赛事报名；购买整盒前请确认款式与库存。</div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <div class="rules-layout">
+        <div>
+          <div class="section-kicker">GET STARTED</div>
+          <h2 class="section-title" style="font-size:32px">第一次打开卡组？</h2>
+          <p class="section-sub" style="margin-bottom:20px">用 5 分钟了解一场对局的基本节奏。</p>
+          <div class="accordion-item open"><button class="accordion-head" data-accordion>1. 认识你的卡组 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button><div class="accordion-body">一套标准卡组为 60 张，包含宝可梦、物品/支援者/竞技场卡与基本能量。同名卡牌通常最多放入 4 张（基本能量除外）。</div></div>
+          <div class="accordion-item"><button class="accordion-head" data-accordion>2. 开局与奖赏卡 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button><div class="accordion-body" hidden>双方各放置 6 张奖赏卡，抽 7 张手牌。若手牌中没有基础宝可梦，需要重新洗牌抽取。每击倒对手一只宝可梦，取走一张奖赏卡。</div></div>
+          <div class="accordion-item"><button class="accordion-head" data-accordion>3. 回合的三个阶段 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button><div class="accordion-body" hidden>抽牌、行动、攻击。每回合只能附加一次能量、进化一次（且不能进化刚上场的宝可梦），攻击后回合结束。</div></div>
+          <div class="accordion-item"><button class="accordion-head" data-accordion>4. 如何获胜 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button><div class="accordion-body" hidden>取得全部 6 张奖赏卡、对手场上没有宝可梦，或对手牌库抽空，均可获胜。特殊条件卡牌也会改变胜负方式。</div></div>
+          <div class="accordion-item"><button class="accordion-head" data-accordion>5. 去哪玩？ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button><div class="accordion-body" hidden>从官方道馆的新手教学开始，参加本地城市联赛，再逐步挑战区域赛。演示站点不提供赛事报名，请以官方公告为准。</div></div>
+        </div>
+        <div>
+          <div class="section-kicker">CARD GALLERY</div>
+          <h2 class="section-title" style="font-size:32px">本期卡面鉴赏</h2>
+          <p class="section-sub" style="margin-bottom:20px">三张特别插画卡，来自不同世代。</p>
+          <div class="card-showcase-page" style="grid-template-columns:1fr">
+            <div class="tcg-card" style="position:relative;width:100%;height:auto;aspect-ratio:5/7;max-width:280px;margin:0 auto;transform:none"><div class="tc-inner"><div class="tc-top"><span>超级喷火龙 X</span><span class="hp">HP 330</span></div><div class="tc-art type-fire"><img src="assets/pokemon/6.webp" alt=""></div><div class="tc-bottom"><div class="tc-name"><span>喷火龙</span><span class="rarity">SAR</span></div><div class="tc-attack"><span>苍炎爆裂</span><b>330</b></div></div></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px"><span>超级进化—勇敢</span><span>M1a · 092/092</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff7df;padding-top:54px">
+    <div class="container">
+      <div style="background:var(--ink);color:#fff;border-radius:var(--radius-lg);padding:38px 42px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden">
+        <div style="position:relative;z-index:1"><div class="section-kicker" style="color:var(--yellow)">BUILD YOUR FIRST DECK</div><h2 style="font-family:var(--display);font-size:31px;letter-spacing:-.04em;line-height:1.2">从一张喜欢的卡开始。</h2><p style="font-size:11.5px;color:rgba(255,255,255,.58);margin-top:7px">去商品页挑选扩充包与卡套，或者先到图鉴认识你的伙伴。</p></div>
+        <div style="display:flex;gap:9px;flex-wrap:wrap;position:relative;z-index:1"><a class="btn btn-yellow" href="goods.html">购买卡牌周边</a><a class="btn btn-ghost" style="border-color:rgba(255,255,255,.25);background:transparent;color:#fff" href="pokedex.html">打开宝可梦图鉴</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/pokedex.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

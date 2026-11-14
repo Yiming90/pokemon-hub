@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pokémon Hub 管理者经营驾驶舱：业务板块经营情况、财务数据与运营分析。">
+<meta name="robots" content="noindex,nofollow">
+<title>经营驾驶舱 · Pokémon Hub Business OS</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="admin-body">
+<a class="skip-link" href="#adminContent">跳到主要内容</a>
+
+<!-- 权限门 -->
+<div id="adminGate" style="min-height:100vh;display:none;place-items:center;background:radial-gradient(circle at 70% 20%,#1e3568,#0d152b 60%);padding:24px">
+  <div style="width:min(560px,100%);background:#fff;border-radius:24px;padding:38px;box-shadow:0 40px 80px -30px rgba(0,0,0,.55)">
+    <div style="display:flex;align-items:center;gap:11px;margin-bottom:22px"><span class="brand-mark"></span><div><div style="font-family:var(--display);font-size:18px;letter-spacing:-.04em">Pokémon Hub <span style="color:var(--blue)">Business OS</span></div><div style="font-size:8px;letter-spacing:.17em;color:var(--muted);font-weight:800">MANAGEMENT CONSOLE</div></div></div>
+    <div style="font-size:10px;letter-spacing:.14em;font-weight:900;color:var(--red);margin-bottom:6px">RESTRICTED ACCESS</div>
+    <h1 style="font-family:var(--display);font-size:30px;letter-spacing:-.04em;line-height:1.2">需要管理者权限</h1>
+    <p id="gateMessage" style="font-size:12px;color:var(--muted);line-height:1.8;margin-top:10px">经营驾驶舱包含模拟经营数据与公开财务资料，仅对管理者角色开放。请使用管理者演示账号登录。</p>
+    <div style="background:#f8faff;border:1px dashed #cbd8f7;border-radius:10px;padding:12px 14px;margin:18px 0;font-size:10px;color:var(--muted);line-height:1.8">
+      <b style="color:var(--blue)">管理者演示账号</b><br>admin@pokemonhub.cn<br>密码：admin2026
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-primary" onclick="window.PK && window.PK.openLogin('admin')">管理员登录</button>
+      <a class="btn btn-ghost" href="index.html">返回消费者门户</a>
+      <button class="btn btn-ghost" onclick="window.PK && window.PK.logout()">切换账号</button>
+    </div>
+    <p style="font-size:8.5px;color:var(--muted-2);margin-top:18px;line-height:1.7">本页面为课堂设计演示，不连接真实企业系统。财务数据来源见登录后的「财务中心」。</p>
+  </div>
+</div>
+
+<!-- 管理端 -->
+<div class="admin-shell" id="adminApp" style="display:none">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <a class="admin-brand" href="index.html">
+      <span class="brand-mark"></span>
+      <div><b>Pokémon Hub</b><span>BUSINESS OS</span></div>
+    </a>
+    <div class="sidebar-scroll">
+      <div class="nav-group-label">经营工作台</div>
+      <nav class="admin-nav">
+        <button class="active" data-section="overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>经营总览</button>
+        <button data-section="news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h13v16H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M17 7h3v11a2 2 0 0 1-2 2M7 8h7M7 12h7M7 16h4"/></svg>资讯运营<span class="nav-count">48</span></button>
+        <button data-section="anime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M17 9h4M3 15h4M17 15h4"/></svg>动画 / 影视</button>
+        <button data-section="commerce"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>商品电商</button>
+        <button data-section="apps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 18h4"/></svg>应用程式</button>
+        <button data-section="games"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10a5 5 0 0 1 4.9 6l-.8 3.2a3 3 0 0 1-5.1 1.3L14.5 16h-5L8 17.5a3 3 0 0 1-5.1-1.3L2.1 13A5 5 0 0 1 7 7Z"/><path d="M7 11h4M9 9v4M16 10h.01M18 12h.01"/></svg>游戏业务</button>
+        <button data-section="cards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="3" width="12" height="16" rx="2"/><path d="M16 21H6a2 2 0 0 1-2-2V7"/></svg>卡牌业务</button>
+        <button data-section="pokedex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h6M15 12h6"/><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/></svg>图鉴运营</button>
+        <button data-section="members"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-5.5 6.5-5.5s6.5 2 6.5 5.5"/><path d="M16 5a3 3 0 0 1 0 6M18 14.5c2.2.7 3.5 2.5 3.5 5"/></svg>会员增长</button>
+      </nav>
+      <div class="nav-group-label">决策与治理</div>
+      <nav class="admin-nav">
+        <button data-section="finance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V7M16 16v-7M20 16v-3"/></svg>财务中心</button>
+        <button data-section="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></svg>系统设置</button>
+        <a href="architecture.html" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg>系统架构图<span class="nav-count">↗</span></a>
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 10 9-7 9 7v10H3V10Z"/><path d="M9 20v-6h6v6"/></svg>返回消费者门户</a>
+      </nav>
+    </div>
+    <div class="sidebar-foot">
+      <div class="sidebar-user">
+        <span class="su-avatar" id="adminSideAvatar">管</span>
+        <div><b id="adminSideName">运营管理员</b><span>超级管理员 · 全部权限</span></div>
+        <button class="su-out" title="退出" onclick="window.PK.logout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4H5v16h5M15 8l4 4-4 4M19 12H9"/></svg></button>
+      </div>
+    </div>
+  </aside>
+  <div class="admin-mobile-backdrop" id="adminBackdrop"></div>
+
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <button class="admin-btn admin-mobile-toggle" id="adminMobileToggle" style="display:none;width:32px;padding:0" aria-label="打开导航"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="admin-breadcrumb"><a href="admin.html" style="color:var(--muted)">Business OS</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><b id="adminBreadcrumb">经营总览</b></div>
+      <label class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="adminGlobalSearch" placeholder="搜索当前页面的数据…" aria-label="搜索当前页面"></label>
+      <div class="topbar-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span id="adminDate">2026 财年</span></div>
+      <div class="topbar-divider"></div>
+      <button class="topbar-icon" id="adminNotify" aria-label="运营提醒"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span class="notif-dot"></span></button>
+      <button class="topbar-icon" id="adminHelp" aria-label="帮助"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 4 2c-.9.7-1.5 1.2-1.5 2.5"/></svg></button>
+      <div class="topbar-divider"></div>
+      <button class="topbar-avatar" id="adminAvatar" aria-label="管理员菜单">管</button>
+    </header>
+
+    <main class="admin-content" id="adminContent">
+      <section class="admin-section active" id="section-overview"></section>
+      <section class="admin-section" id="section-news"></section>
+      <section class="admin-section" id="section-anime"></section>
+      <section class="admin-section" id="section-commerce"></section>
+      <section class="admin-section" id="section-apps"></section>
+      <section class="admin-section" id="section-games"></section>
+      <section class="admin-section" id="section-cards"></section>
+      <section class="admin-section" id="section-pokedex"></section>
+      <section class="admin-section" id="section-members"></section>
+      <section class="admin-section" id="section-finance"></section>
+      <section class="admin-section" id="section-settings"></section>
+    </main>
+  </div>
+</div>
+
+<script src="assets/pokedex.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>

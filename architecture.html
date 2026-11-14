@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="宝可梦全渠道信息系统架构图：五层架构、纯前端演示边界与生产扩展建议。">
+<title>系统架构图 · Pokémon Hub</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="architecture">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div id="siteHeader"></div>
+<main id="main">
+  <section class="arch-hero">
+    <div class="container">
+      <div class="breadcrumb" style="color:rgba(255,255,255,.45)"><a href="index.html" style="color:rgba(255,255,255,.7)">首页</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><span>系统架构</span></div>
+      <div class="page-eyebrow" style="color:var(--yellow)">SYSTEM ARCHITECTURE</div>
+      <h1 class="page-title">一个门户背后，<br>是一套完整的信息系统。</h1>
+      <p class="page-desc">从消费者触点、业务能力到数据与治理。这张图说明宝可梦门户如何把内容、交易与经营决策连接起来，也明确标注了本次课堂作品的实现边界。</p>
+      <div class="arch-badges"><span>五层架构</span><span>全渠道体验</span><span>纯前端演示</span><span>公开财务数据</span><span>可扩展至生产环境</span></div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="arch-canvas-wrap">
+      <img src="assets/architecture.svg" alt="宝可梦全渠道信息系统架构图：用户触点、体验与渠道、业务能力、数据与集成、支撑与治理五层架构">
+      <div class="arch-actions">
+        <span class="hint">建议全屏查看细节；SVG 可无损缩放，适合直接放入课程报告。</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn btn-primary btn-sm" href="assets/architecture.svg" download="宝可梦信息系统架构图.svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg> 下载 SVG</a>
+          <a class="btn btn-ghost btn-sm" href="assets/architecture.png" download="宝可梦信息系统架构图.png">下载 PNG</a>
+          <a class="btn btn-ghost btn-sm" href="admin.html">打开经营驾驶舱</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">DESIGN PRINCIPLES</div><h2 class="section-title">四个设计原则</h2></div></div>
+      <div class="arch-principles">
+        <div class="arch-principle"><div class="ap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6M9 14v4"/><rect x="18" y="9" width="4" height="11" rx="1"/></svg></div><h3>全渠道一致体验</h3><p>门户、图鉴、商城与会员中心共享同一套设计语言和内容模型。</p></div>
+        <div class="arch-principle"><div class="ap-icon" style="background:#fff4bd;color:#a27700"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/></svg></div><h3>内容与交易解耦</h3><p>资讯、动画、商品、卡牌独立运营，又通过会员与搜索串联。</p></div>
+        <div class="arch-principle"><div class="ap-icon" style="background:#ffe9ea;color:#c53a3f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V7M16 16v-7"/></svg></div><h3>数据驱动经营</h3><p>内容表现、交易转化与财务结果，被放进同一个管理驾驶舱。</p></div>
+        <div class="arch-principle"><div class="ap-icon" style="background:#e6f7f1;color:#1f9d78"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5.5V11c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5.5L12 2Z"/></svg></div><h3>安全与合规</h3><p>管理端角色隔离、演示数据脱敏；生产环境遵循数据最小化原则。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;border-top:1px solid var(--line)">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">LAYER BY LAYER</div><h2 class="section-title">逐层拆解</h2><p class="section-sub">每一层只负责一类问题，层与层之间通过清晰的契约连接。</p></div></div>
+      <div class="arch-layers">
+        <div class="arch-layer"><div class="al-name">用户触点<span>WHO / ENTRY</span></div><div class="al-items"><span>消费者 Web 门户</span><span>移动端 H5</span><span>管理者驾驶舱</span><span>官方频道 / 门店 / 赛事</span></div></div>
+        <div class="arch-layer"><div class="al-name">体验与渠道<span>EXPERIENCE</span></div><div class="al-items"><span>首页与导航</span><span>资讯</span><span>动画 / 电影</span><span>商品商城</span><span>应用程式</span><span>游戏</span><span>卡牌</span><span>宝可梦图鉴</span></div></div>
+        <div class="arch-layer"><div class="al-name">业务能力<span>CAPABILITIES</span></div><div class="al-items"><span>内容管理 CMS</span><span>商品与订单</span><span>会员与身份</span><span>搜索与推荐</span><span>卡牌与赛事</span><span>经营分析</span><span>财务与报表</span></div></div>
+        <div class="arch-layer"><div class="al-name">数据与集成<span>DATA</span></div><div class="al-items"><span>静态内容数据</span><span>localStorage</span><span>PokéAPI / 官方素材</span><span>公开财务公告</span><span>CSV / JSON / PDF 导出</span></div></div>
+        <div class="arch-layer"><div class="al-name">支撑与治理<span>GOVERNANCE</span></div><div class="al-items"><span>设计系统</span><span>响应式与可访问性</span><span>角色权限</span><span>隐私与版权声明</span><span>版本与交付</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">IMPLEMENTATION BOUNDARY</div><h2 class="section-title">课堂演示 vs 生产环境</h2><p class="section-sub">把边界讲清楚，比假装拥有后端更重要。</p></div></div>
+      <div class="boundary-grid">
+        <div class="boundary-card demo">
+          <h3><span class="bc-label">本次实现</span> 纯前端静态网站</h3>
+          <p>所有页面、交互与数据可视化都在浏览器中运行。没有 Node/Python 业务服务，也没有数据库。网站地址由一个静态文件服务器提供。</p>
+          <ul><li>HTML / CSS / Vanilla JS 静态文件</li><li>localStorage 保存会话、购物车、收藏与订单</li><li>消费者与管理者两套前端角色视图</li><li>硬编码演示账号，非生产级认证</li><li>公开财务数据 + 明确标注的模拟经营数据</li><li>可完全离线运行，除外部引用链接</li></ul>
+        </div>
+        <div class="boundary-card prod">
+          <h3><span class="bc-label">生产扩展</span> 云原生全渠道架构</h3>
+          <p>若投入真实运营，可在保持前端体验不变的前提下，将业务能力层替换为服务化组件，并接入统一身份与数据平台。</p>
+          <ul><li>API Gateway + BFF，按渠道聚合接口</li><li>内容中台、商品/订单服务、会员服务</li><li>PostgreSQL / Redis / 对象存储 / CDN</li><li>OAuth 2.0 / OIDC、RBAC、审计日志</li><li>数据仓库 + BI，指标口径统一治理</li><li>可观测性：日志、指标、追踪与告警</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;border-top:1px solid var(--line);padding-bottom:90px">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">KEY USER FLOW</div><h2 class="section-title">一次完整旅程</h2><p class="section-sub">以“发现商品并完成演示购买”为例。</p></div></div>
+      <div class="flow-grid">
+        <div class="flow-step"><div class="fs-no">STEP 01</div><b>发现</b><p>从首页或全局搜索进入资讯 / 商品 / 图鉴。</p></div>
+        <div class="flow-step"><div class="fs-no">STEP 02</div><b>浏览</b><p>筛选分类、查看详情、收藏喜欢的商品或宝可梦。</p></div>
+        <div class="flow-step"><div class="fs-no">STEP 03</div><b>登录</b><p>消费者登录后创建本地会话，购物车跨页面保留。</p></div>
+        <div class="flow-step"><div class="fs-no">STEP 04</div><b>结算</b><p>生成演示订单并写入 localStorage，可在会员中心查看。</p></div>
+      </div>
+      <div style="display:flex;gap:9px;margin-top:28px;flex-wrap:wrap"><a class="btn btn-primary" href="index.html">从首页体验</a><a class="btn btn-ghost" href="admin.html">查看管理端经营情况</a><a class="btn btn-ghost" href="about.html#data">查看数据与引用</a></div>
+    </div>
+  </section>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/pokedex.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

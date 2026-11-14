@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="宝可梦应用程式：Pokémon GO、TCG Pocket、Sleep、HOME、UNITE 与 Masters EX。">
+<title>应用程式 · Pokémon Hub</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="apps">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div id="siteHeader"></div>
+<main id="main">
+  <section class="page-hero" style="background:linear-gradient(120deg,#eef3ff,#fffaf0 70%,#fff4bd)">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">首页</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><span>应用程式</span></div>
+      <div class="page-eyebrow">POKÉMON APPS</div>
+      <h1 class="page-title">让冒险，<br><span class="accent">住进你的口袋。</span></h1>
+      <p class="page-desc">散步、睡眠、收藏、对战与整理。宝可梦应用把那个世界拆成许多小小的入口，安放在每天的生活里。</p>
+      <div class="page-hero-stats"><div class="page-stat"><strong>6</strong><span>精选官方应用</span></div><div class="page-stat"><strong>8,420万</strong><span>矩阵月活跃用户</span></div><div class="page-stat"><strong>4.6★</strong><span>平均商店评分</span></div></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-kicker">CHOOSE YOUR APP</div><h2 class="section-title">今天想怎么玩？</h2><p class="section-sub">点击应用卡片查看详情。演示站点不提供下载，请前往官方商店。</p></div>
+      </div>
+      <div class="apps-grid" id="appsGrid" style="--apps-light:1"></div>
+      <style>#appsGrid .app-card{background:#fff;border-color:var(--line);color:var(--ink);box-shadow:var(--shadow-sm)}#appsGrid .app-card:hover{background:#fff;border-color:var(--line-strong);box-shadow:var(--shadow)}#appsGrid .app-card p{color:var(--muted)}#appsGrid .app-card .app-cat{color:var(--muted)}#appsGrid .app-meta{border-color:var(--line);color:var(--muted)}#appsGrid .app-card .app-cat{color:var(--muted)}#appsGrid .app-card .app-platforms span{border-color:var(--line)}</style>
+    </div>
+  </section>
+  <section class="section" style="background:#fff;border-top:1px solid var(--line)">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">ONE ACCOUNT, EVERY WORLD</div><h2 class="section-title">一个账号，连接所有旅程</h2><p class="section-sub">统一的会员身份，让收藏、进度与朋友关系在不同应用间延续。</p></div></div>
+      <div class="arch-principles">
+        <div class="arch-principle"><div class="ap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><h3>统一身份</h3><p>一个训练家 ID，连接应用、商城与会员权益。</p></div>
+        <div class="arch-principle"><div class="ap-icon" style="background:#fff4bd;color:#a27700"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5.5V11c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5.5L12 2Z"/></svg></div><h3>数据安全</h3><p>最小化收集，敏感信息本地演示，不连接真实服务。</p></div>
+        <div class="arch-principle"><div class="ap-icon" style="background:#ffe9ea;color:#c53a3f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 18h4"/></svg></div><h3>跨端体验</h3><p>手机、平板与 Nintendo Switch 之间的进度与收藏同步。</p></div>
+        <div class="arch-principle"><div class="ap-icon" style="background:#e6f7f1;color:#1f9d78"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div><h3>健康节奏</h3><p>把散步与睡眠变成游戏，不制造额外负担。</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/pokedex.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

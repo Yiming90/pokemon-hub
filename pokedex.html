@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="宝可梦图鉴：按属性、世代与名称查询 52 只精选宝可梦的属性、特性、种族值与小故事。">
+<title>宝可梦图鉴 · Pokémon Hub</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="pokedex">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div id="siteHeader"></div>
+<main id="main">
+  <section class="pokedex-page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">首页</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><span>宝可梦图鉴</span></div>
+      <div class="page-eyebrow">NATIONAL POKÉDEX</div>
+      <h1 class="page-title">全国图鉴，<br><span style="color:var(--yellow)">从 #0001 开始。</span></h1>
+      <p class="page-desc">收录 52 只跨越九个世代的精选宝可梦。按属性组合筛选、搜索名字，查看它们的生态记录与种族值。</p>
+      <div class="page-hero-stats"><div class="page-stat"><strong>52</strong><span>精选条目</span></div><div class="page-stat"><strong>1,025</strong><span>全国图鉴总数</span></div><div class="page-stat"><strong>9</strong><span>世代覆盖</span></div><div class="page-stat"><strong>18</strong><span>属性筛选</span></div></div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="pokedex-toolbar">
+      <div class="pdx-topline">
+        <label class="pdx-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="pdxSearch" placeholder="搜索名称、英文名、日文名或编号…" aria-label="搜索宝可梦"></label>
+        <div class="pdx-actions">
+          <select class="pdx-select" id="pdxGen" aria-label="筛选世代"><option value="all">全部世代</option><option value="1">第一世代</option><option value="2">第二世代</option><option value="3">第三世代</option><option value="4">第四世代</option><option value="5">第五世代</option><option value="6">第六世代</option><option value="7">第七世代</option><option value="8">第八世代</option><option value="9">第九世代</option></select>
+          <select class="pdx-select" id="pdxSort" aria-label="排序"><option value="id">按图鉴编号</option><option value="total">按种族值</option><option value="name">按中文名</option></select>
+          <button class="btn btn-primary btn-sm" id="pdxRandom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 3h5v5M21 3l-7 7M8 21H3v-5M3 21l7-7M21 16v5h-5M14 14l7 7M3 8V3h5M10 10 3 3"/></svg> 随机一只</button>
+        </div>
+      </div>
+      <div class="type-filter" id="typeFilter"></div>
+    </div>
+    <div class="pdx-resultbar"><span id="pdxCount"><b>52</b> 只宝可梦</span><span style="display:flex;gap:14px;align-items:center"><span id="pdxShowing">显示 18 / 52</span><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:7px;height:7px;border-radius:50%;background:var(--yellow)"></span>点击卡片查看详情</span></span></div>
+    <div class="pokedex-grid" id="pokedexGrid"></div>
+    <div style="text-align:center;font-size:9px;color:var(--muted-2);padding:34px 0 8px;line-height:1.8">图鉴资料与官方美术素材来自 PokéAPI，版权归 Nintendo / Creatures Inc. / GAME FREAK inc. 所有。<br>本站仅呈现 52 只精选条目，用于课堂交互演示。</div>
+  </div>
+  <section class="section" style="padding-top:30px;padding-bottom:70px">
+    <div class="container">
+      <div class="newsletter-box" style="min-height:240px">
+        <div class="newsletter-art"><img src="assets/pokemon/700.webp" alt="仙子伊布"></div>
+        <div class="newsletter-copy"><div class="section-kicker" style="color:var(--yellow)">KEEP EXPLORING</div><h2>还有 973 只，<br>在更远的地方等你。</h2><p>本站收录九个世代的代表宝可梦。完整全国图鉴与更多形态，请前往官方宝可梦图鉴继续探索。</p><div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap"><a class="btn btn-yellow btn-sm" href="https://hk.portal-pokemon.com/play/pokedex/" target="_blank" rel="noopener">前往官方图鉴 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="btn btn-ghost btn-sm" style="border-color:rgba(255,255,255,.25);color:#fff;background:transparent" href="cards.html">查看卡牌</a></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/pokedex.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

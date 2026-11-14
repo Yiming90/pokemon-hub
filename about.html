@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="关于 Pokémon Hub：功能清单、纯前端实现边界、财务数据来源与版权说明。">
+<title>关于本站 · Pokémon Hub</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="about">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div id="siteHeader"></div>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">首页</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><span>关于本站</span></div>
+      <div class="page-eyebrow">ABOUT THIS PROJECT</div>
+      <h1 class="page-title">一个关于“连接”的<br><span class="accent">课堂设计作品。</span></h1>
+      <p class="page-desc">把宝可梦世界的资讯、故事、商品与游戏，和一套能看见经营情况的管理者驾驶舱，放进同一个信息系统里。</p>
+      <div class="arch-badges" style="margin-top:24px"><span style="border-color:var(--line);background:#fff;color:var(--muted)">课程小组作业</span><span style="border-color:var(--line);background:#fff;color:var(--muted)">纯前端</span><span style="border-color:var(--line);background:#fff;color:var(--muted)">宝可梦主题</span><span style="border-color:var(--line);background:#fff;color:var(--muted)">无真实交易</span></div>
+      <div style="display:flex;gap:9px;margin-top:20px;flex-wrap:wrap"><a class="btn btn-primary btn-sm" href="downloads/Pokemon-Hub-Website.zip" download>下载完整代码 ZIP</a><a class="btn btn-ghost btn-sm" href="assets/architecture.png" download>下载架构图 PNG</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">WHAT WE BUILT</div><h2 class="section-title">一个门户，两套视角</h2><p class="section-sub">消费者看到世界，管理者看到世界如何运转。</p></div></div>
+      <div class="arch-principles" style="grid-template-columns:1fr 1fr">
+        <div class="arch-principle" style="padding:30px">
+          <div class="ap-icon" style="background:#fff4bd;color:#a27700;width:44px;height:44px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
+          <h3 style="font-size:20px">消费者端 · 探索世界</h3>
+          <p style="font-size:11.5px;margin-top:8px">打开网站就能进入：资讯、电视动画/电影、商品、应用程式、游戏、卡牌、宝可梦图鉴。所有导航均可点击跳转，支持搜索、筛选、详情弹窗、收藏、购物袋与演示结算。</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px"><a class="btn btn-primary btn-sm" href="index.html">进入门户</a><a class="btn btn-ghost btn-sm" href="pokedex.html">打开图鉴</a></div>
+        </div>
+        <div class="arch-principle" style="padding:30px">
+          <div class="ap-icon" style="background:#e9efff;color:#2f5fe0;width:44px;height:44px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V7M16 16v-7"/></svg></div>
+          <h3 style="font-size:20px">管理者端 · 看见经营</h3>
+          <p style="font-size:11.5px;margin-top:8px">独立登录入口进入 Business OS。资讯、动画、商品、应用、游戏、卡牌、图鉴、会员每个业务板块都有对应 KPI、趋势、结构与明细表；财务中心提供真实公开财年报表与 CSV 导出。</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px"><a class="btn btn-primary btn-sm" href="admin.html">进入管理端</a><a class="btn btn-ghost btn-sm" href="architecture.html">查看架构图</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;border-top:1px solid var(--line)">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">FEATURE CHECKLIST</div><h2 class="section-title">功能实现清单</h2><p class="section-sub">参考零售后台模板的常见模块，并按宝可梦的业务语境重新设计。</p></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px" class="about-feature-grid">
+        <div class="boundary-card">
+          <h3 style="margin-bottom:12px"><span class="bc-label" style="background:var(--yellow)">CONSUMER</span> 消费者功能</h3>
+          <ul style="gap:8px">
+            <li>六大内容板块：资讯 / 动画影视 / 商品 / 应用程式 / 游戏 / 卡牌</li>
+            <li>宝可梦图鉴：搜索、属性/世代筛选、排序、详情、收藏</li>
+            <li>全局搜索：资讯、图鉴、商品、游戏跨模块检索</li>
+            <li>商品筛选、排序、详情、收藏、购物袋与优惠码</li>
+            <li>消费者 / 管理者双入口登录，角色路由隔离</li>
+            <li>会员中心：演示订单、收藏、昵称与退出</li>
+            <li>响应式布局、移动端抽屉导航、键盘 Esc / Ctrl+K</li>
+            <li>资讯详情、动画剧集/剧场版详情、应用与游戏详情</li>
+          </ul>
+        </div>
+        <div class="boundary-card prod">
+          <h3 style="margin-bottom:12px"><span class="bc-label">MANAGER</span> 管理者功能</h3>
+          <ul style="gap:8px">
+            <li>经营总览：财务 KPI、五年趋势、业务结构、运营提醒</li>
+            <li>资讯运营：发布量、浏览量、CTR、内容分类与明细</li>
+            <li>动画影视：播放量、完播率、授权收入与作品表现</li>
+            <li>商品电商：GMV、订单、转化、库存预警与热销商品</li>
+            <li>应用程式 / 游戏 / 卡牌 / 图鉴：各自经营指标</li>
+            <li>会员增长：规模、分层、复购、LTV 与会员明细</li>
+            <li>财务中心：FY2022—FY2026 公开财务、比率、来源</li>
+            <li>CSV 导出、打印/PDF、本地演示数据导出与重置</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="data">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">DATA &amp; SOURCES</div><h2 class="section-title">数据与引用</h2><p class="section-sub">哪些是真实公开数据，哪些是课堂模拟，必须说清楚。</p></div></div>
+      <div class="two-col" style="margin-bottom:0">
+        <div class="boundary-card demo">
+          <h3><span class="bc-label">真实公开数据</span> 财务与图鉴</h3>
+          <p>宝可梦公司第 26—28 期决算公告（FY2022—FY2026），单位统一换算为亿日元。图鉴资料与官方美术素材来自 PokéAPI。</p>
+          <ul><li>营业收入、营业利润、经常利润、纯利润</li><li>总资产、股东权益、总负债、权益比率</li><li>52 只精选宝可梦的属性、特性、种族值与图鉴说明</li></ul>
+          <p style="margin-top:12px;font-size:10px">来源：<a href="https://prtimes.com/finance/1010401079276/settlement/457798" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline">PR TIMES 第 28 期</a> · <a href="https://prtimes.com/finance/1010401079276/settlement/404251" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline">第 27 期</a> · <a href="https://prtimes.com/finance/1010401079276/settlement/352473" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline">第 26 期</a> · <a href="https://pokeapi.co/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline">PokéAPI</a></p>
+        </div>
+        <div class="boundary-card">
+          <h3><span class="bc-label" style="background:var(--ink);color:#fff">模拟数据</span> 运营与交易</h3>
+          <p>资讯文章、动画剧集、商品、价格、库存、订单、会员、渠道与业务结构均为课堂演示模拟，不代表官方披露，也不产生真实交易。</p>
+          <ul><li>商品价格、库存、销量与优惠活动</li><li>应用与游戏活跃、收入与留存</li><li>会员规模、分层、LTV 与复购</li><li>业务结构占比与区域收入结构</li></ul>
+          <p style="margin-top:12px;font-size:10px">为课堂展示而设计，非商业用途。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;border-top:1px solid var(--line)">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">FRONTEND ONLY</div><h2 class="section-title">关于“只有前端”</h2></div></div>
+      <div class="boundary-grid" style="margin-top:0">
+        <div class="boundary-card prod">
+          <h3><span class="bc-label">结论</span> 本站没有后端</h3>
+          <p>页面由静态文件服务器提供，输入网址即可访问。没有 API 服务、数据库或服务端登录；账号校验、购物车、订单与收藏均在浏览器内完成。这样可以完整展示交互与信息架构，同时避免真实交易与隐私风险。</p>
+          <ul><li>可直接部署到 GitHub Pages / Netlify 等静态托管</li><li>本地可用任意静态服务器运行，无需安装依赖</li><li>数据刷新后仍保留（同一浏览器）</li><li>清除浏览器数据会重置演示状态</li></ul>
+        </div>
+        <div class="boundary-card demo">
+          <h3><span class="bc-label">说明</span> 为什么仍然像“系统”</h3>
+          <p>通过角色路由、独立管理端、业务指标建模、真实财务数据和数据导出，把“网页”提升为“信息系统的界面层”。架构图进一步说明：生产化时哪些层需要替换为服务。</p>
+          <ul><li>消费者与管理者两套信息架构</li><li>业务指标与财务指标分离标注</li><li>可下载 CSV / SVG / ZIP 交付</li><li>无需后端即可演示完整流程</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="section-head"><div><div class="section-kicker">PRIVACY &amp; CREDITS</div><h2 class="section-title">隐私、版权与说明</h2></div></div>
+      <div class="arch-principles" style="grid-template-columns:1fr 1fr 1fr">
+        <div class="arch-principle"><h3>隐私</h3><p>不收集真实个人信息，不发送网络请求保存账号。仅使用 localStorage 保存演示状态。演示账号与密码公开，仅用于课堂。</p></div>
+        <div class="arch-principle"><h3>版权</h3><p>宝可梦、Pokémon 及相关名称、角色与图像为 Nintendo / Creatures Inc. / GAME FREAK inc. 的商标与版权财产。本站为非官方课堂作品。</p></div>
+        <div class="arch-principle"><h3>参考</h3><p>视觉与信息架构参考宝可梦官方门户的公开导航结构；后台模块参考零售信息系统模板的常见组成。所有页面与代码为本次作业重新设计与实现。</p></div>
+      </div>
+      <div class="notice-banner" style="margin-top:24px;font-size:11px;padding:14px 16px">老师提供的 Gemini 分享链接需要 Google 登录后才能访问，公开抓取会被重定向。因此本作品按“零售后台模板常见功能”进行对标：登录与角色、经营仪表盘、内容/商品/订单/会员管理、报表与设置；并结合宝可梦官网的六大内容入口与图鉴进行重构。若需逐项对照老师页面，可在登录后补充截图再微调。</div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;padding-bottom:80px">
+    <div class="container">
+      <div class="newsletter-box" style="min-height:240px">
+        <div class="newsletter-art"><img src="assets/pokemon/151.webp" alt="梦幻"></div>
+        <div class="newsletter-copy"><div class="section-kicker" style="color:var(--yellow)">READY TO EXPLORE?</div><h2>现在，输入地址，<br>开始你的冒险。</h2><p>消费者账号与管理者账号已准备好。建议先以消费者身份浏览，再进入经营驾驶舱查看各板块表现。</p><div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap"><a class="btn btn-yellow btn-sm" href="index.html">返回首页</a><a class="btn btn-ghost btn-sm" style="border-color:rgba(255,255,255,.25);color:#fff;background:transparent" href="admin.html">管理者入口</a></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/pokedex.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

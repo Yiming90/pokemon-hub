@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="宝可梦最新资讯、活动、游戏、动画、商品与卡牌新闻。">
+<title>最新资讯 · Pokémon Hub</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="news">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div id="siteHeader"></div>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">首页</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><span>资讯</span></div>
+      <div class="page-eyebrow">POKÉMON NEWSROOM</div>
+      <h1 class="page-title">世界正在发生，<br><span class="accent">值得被看见。</span></h1>
+      <p class="page-desc">从世界锦标赛到新作情报，从动画新章到卡牌扩充包。这里收录宝可梦世界的每一个重要瞬间。</p>
+      <div class="page-hero-stats">
+        <div class="page-stat"><strong>12</strong><span>本周精选报道</span></div>
+        <div class="page-stat"><strong>5</strong><span>内容分类</span></div>
+        <div class="page-stat"><strong>每日</strong><span>持续更新</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="chip-row" id="newsChips"></div>
+        <label class="search-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="newsSearch" placeholder="搜索资讯标题或标签" aria-label="搜索资讯"></label>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><span class="goods-count">共 <b id="newsCount">12</b> 篇报道</span><span style="font-size:10px;color:var(--muted)">按发布时间排序</span></div>
+      <div class="news-grid" id="newsGrid"></div>
+      <div class="load-more-wrap"><button class="btn btn-ghost" id="newsLoadMore">加载更多资讯 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </div>
+  </section>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/pokedex.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

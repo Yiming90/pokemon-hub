@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="宝可梦官方风格商品：毛绒玩偶、模型、卡牌周边、服饰与居家收藏。">
+<title>商品 · Pokémon Hub</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="goods">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div id="siteHeader"></div>
+<main id="main">
+  <section class="page-hero" style="padding-bottom:44px">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">首页</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><span>商品</span></div>
+      <div class="page-eyebrow">POKÉMON GOODS</div>
+      <h1 class="page-title">把喜欢的伙伴，<br><span class="accent">带回日常生活。</span></h1>
+      <p class="page-desc">毛绒玩偶、收藏模型、卡牌周边与训练家装备。每一件周边，都是一次把冒险带回家的机会。</p>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="goods-hero-banner">
+        <div style="position:relative;z-index:1">
+          <div class="section-kicker" style="margin-bottom:4px">WINTER COLLECTION 2026</div>
+          <h2>冬日毛绒系列<br>温暖上新</h2>
+          <p>围巾皮卡丘、毛线帽伊布与卡比兽靠垫。限量发售，售完即止。</p>
+          <div class="banner-cta"><button class="btn btn-primary btn-sm" onclick="document.getElementById('productGrid').scrollIntoView({behavior:'smooth'})">立即选购</button><a class="btn btn-ghost btn-sm" href="javascript:void(0)" onclick="window.PK.toast('演示站点：优惠码 PIKA10 可享 9 折')">领取优惠</a></div>
+        </div>
+        <img src="assets/pokemon/25.webp" alt="皮卡丘">
+      </div>
+      <div class="goods-toolbar">
+        <div class="chip-row" id="goodsChips"></div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <label class="search-field" style="min-width:190px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="goodsSearch" placeholder="搜索商品" aria-label="搜索商品"></label>
+          <select class="sort-select" id="goodsSort" aria-label="排序方式"><option value="default">推荐排序</option><option value="popular">最受欢迎</option><option value="price-asc">价格从低到高</option><option value="price-desc">价格从高到低</option></select>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px"><span class="goods-count" id="goodsCount">共 <b>12</b> 件商品</span><span style="font-size:10px;color:var(--muted)">演示商品 · 不产生真实交易</span></div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="cart-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 9 18l-5-5"/></svg><span>所有订单均支持 7 天无理由退货。单笔满 ¥299 免运费；输入优惠码 <b style="color:var(--ink)">PIKA10</b> 可享 9 折（演示）。</span></div>
+    </div>
+  </section>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/pokedex.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
